@@ -104,6 +104,7 @@ class Pet(models.Model):
 
 class PetPhoto(models.Model):
     photo = models.ImageField(
+        upload_to='pet_photos/',
         validators=(
             file_max_size,
         )

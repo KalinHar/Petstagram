@@ -20,6 +20,6 @@ urlpatterns = (
 
     path('photo/details/<int:pk>/', show_pet_photo_details, name='pet photo details'),
     path('photo/add/', create_pet_photo, name='create pet photo'),
-    path('photo/edit/<int:pk>/', edit_pet_photo, name='edit pet_photo'),
+    path('photo/edit/<int:pk>/', edit_pet_photo, name='edit pet photo'),
     path('photo/like/<int:pk>/', like_pet_photo, name='like pet photo'),
 )

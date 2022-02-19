@@ -159,12 +159,10 @@ class DeletePetForm(BootstrapFormMixin, DisabledFieldsFormMixin, forms.ModelForm
         model = Pet
         exclude = ('user_profile',)
 
- # TODO...
 
 def take_query():
     val = [(choice.name, choice) for choice in
            Pet.objects.filter(user_profile=get_profile())]
-    print(val)
     return val
 
 
