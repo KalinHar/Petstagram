@@ -1,3 +1,5 @@
+import os
+
 from django.shortcuts import render, redirect
 
 from pestagram1.main.forms import CreatePetPhotoForm
@@ -46,4 +48,12 @@ def edit_pet_photo(request, pk):
     return pet_photo_actions(request, CreatePetPhotoForm, 'dashboard', PetPhoto.objects.get(pk=pk), 'photo_edit.html')
 
 
-# Todo pet photos delete functionality and 401
+def delete_pet_photo(request, pk):
+    pet_photo = PetPhoto.objects.get(pk=pk)
+    image_path = pet_photo.photo.path
+    pet_photo.delete()
+    os.remove(image_path)
+
+    return redirect('dashboard')
+
+# Todo 401
